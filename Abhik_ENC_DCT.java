@@ -1,13 +1,13 @@
 import java.util.*;
 
-class Idk1 {
+class Abhik_ENC_DCT {
     Scanner sc = new Scanner(System.in);
     char list[] = new char[94];
     char shuffledlist[] = new char[94];
     char ch = ' ';
 
     // Constructor
-    Idk1() {
+    Abhik_ENC_DCT() {
         // You can initialize anything here if needed
     }
 
@@ -42,20 +42,16 @@ class Idk1 {
         shuffle();
     }
 
-    void shuffle() {
-        // Shuffle the list array to create shuffledlist
-        List<Character> charlist = new ArrayList<>();
-        for (int i = 0; i < list.length; i++) {
-            charlist.add(ch);
-            ch++;
-        }
-        Collections.shuffle(charlist);
-
-        for (int i = 0; i < shuffledlist.length; i++) {
-            shuffledlist[i] = charlist.get(i);
-        }
-        System.out.println("Shuffled list: " + Arrays.toString(shuffledlist));
-        ask();
+    void shuffle(){
+    for(int i=list.length-1;i>0;i--){
+        int m=i;
+        int r=m+25;
+        if(r>(list.length-1))
+        r=r-(list.length-1);
+        shuffledlist[i]=list[r];
+    }
+    System.out.println("Shuffled list: " + Arrays.toString(shuffledlist));
+    ask();
     }
 
     void enp() {
@@ -91,8 +87,7 @@ class Idk1 {
     }
 
     public static void main(String[] args) {
-        Idk1 idk = new Idk1();
+        Abhik_ENC_DCT idk = new Abhik_ENC_DCT();
         idk.ask();
     }
 }
-
